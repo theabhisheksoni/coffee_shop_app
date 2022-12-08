@@ -1,0 +1,19 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" class='border' >Name</th>
+        <th scope="col" class='border' >Price</th>
+        <th scope="col" class='border' >Availability</th>
+        <th scope="col" class='border' >Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <div id="items">
+        <% @items.each do |item| %>
+          <%= render item %>
+        <%end%>
+      </div>
+    </tbody>
+  </table>
+</div>
