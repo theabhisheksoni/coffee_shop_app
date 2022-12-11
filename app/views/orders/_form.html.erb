@@ -1,0 +1,17 @@
+<%= form_with(model: order, html: { class: "row g-3" }) do |order_form| %>
+  <%= render 'shared/errors', object: order %>
+
+  <div id="order_items" data-controller='orders' style="display: flex">
+    <%= order_form.fields_for :order_items do |builder| %>
+      <%= render 'order_item_fields', order_form: builder %>
+    <% end %>
+  </div>
+
+  <div class="col-12">
+    <%= link_to_add_order_item('Add Item', order_form, :order_items) %>
+  </div>
+
+  <div class="col-12">
+    <%= order_form.submit "Submit", :class => 'btn btn-primary' %>
+  </div>
+<% end %>

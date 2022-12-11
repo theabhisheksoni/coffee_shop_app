@@ -1,0 +1,19 @@
+<div class='nested-fields ms-3'>
+  <div class="card">
+    <div class="card-body">
+      <div class="col-md-8">
+        <%= order_form.label :item , class: "form-label"%>
+        <%= order_form.collection_select(:item_id, Item.available, 'id', 'name', { prompt: 'Select Item' }, { class: "form-select" }) %>
+      </div>
+
+      <div class="col-md-8 mb-3">
+        <%= order_form.label :quantity, class: "form-label" %>
+        <%= order_form.number_field :quantity, class: "form-control" %>
+      </div>
+
+      <div class="col-12">
+        <%= link_to 'Remove Item', '#', class: 'remove_order_item btn btn-danger' %>
+      </div>
+    </div>
+  </div>
+</div>
