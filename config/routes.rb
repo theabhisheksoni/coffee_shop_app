@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :discounts
   resources :tax_categories
   resources :orders, except: [:edit, :update]
   resources :items

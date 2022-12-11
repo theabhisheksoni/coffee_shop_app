@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+<%= link_to "New discount", new_discount_path, class: 'btn btn-info' %>
+
+<h1>Discounts</h1>
+<table class="table">
+  <thead>
+    <tr class='border'>
+      <th scope="col" class='border'>Base item</th>
+      <th scope="col" class='border'>Base item quantity</th>
+      <th scope="col" class='border'>Child item</th>
+      <th scope="col" class='border'>Child item quantity</th>
+      <th scope="col" class='border'>Discount</th>
+      <th scope="col" class='border'>Show</th>
+    </tr>
+  </thead>
+  <tbody>
+    <div id="discounts">
+      <% @discounts.each do |discount| %>
+        <%= render discount %>
+      <% end %>
+    </div>
+  </tbody>
+</table>

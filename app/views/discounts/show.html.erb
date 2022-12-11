@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<table class="table">
+  <thead>
+    <tr class='border'>
+      <th scope="col" class='border'>Base item</th>
+      <th scope="col" class='border'>Base item quantity</th>
+      <th scope="col" class='border'>Child item</th>
+      <th scope="col" class='border'>Child item quantity</th>
+      <th scope="col" class='border'>Discount</th>
+      <th scope="col" class='border'>Show</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @discount %>
+  </tbody>
+</table>
+
+<%= link_to "Back to Discounts", discounts_path, class: "btn btn-secondary" %>

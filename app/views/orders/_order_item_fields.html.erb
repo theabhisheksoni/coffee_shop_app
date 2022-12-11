@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-body">
       <div class="col-md-8">
-        <%= order_form.label :item , class: "form-label"%>
+        <%= order_form.label :item, class: "form-label"%>
         <%= order_form.collection_select(:item_id, Item.available, 'id', 'name', { prompt: 'Select Item' }, { class: "form-select" }) %>
       </div>
 
