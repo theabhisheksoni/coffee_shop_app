@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Tax categories</h1>
+
+<%= link_to "New Tax Category", new_tax_category_path, class: 'btn btn-info' %>
+
+<table class="table caption-top">
+  <thead>
+    <tr>
+      <th>Tax rate</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <div id="tax_categories">
+      <% @tax_categories.each do |tax_category| %>
+        <%= render tax_category %>
+      <% end %>
+    </div>
+  </tbody>
+</table>

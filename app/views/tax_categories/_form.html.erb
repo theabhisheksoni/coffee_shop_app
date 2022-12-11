@@ -1,0 +1,12 @@
+<%= form_with(model: tax_category, html: { class: "row g-3" }) do |form| %>
+  <%= render 'shared/errors', object: tax_category %>
+
+  <div class="col-md-3">
+    <%= form.label :tax_rate, class: "form-label" %>
+    <%= form.text_field :tax_rate, class: "form-control" %>
+  </div>
+
+  <div class="col-12">
+    <%= form.submit "Submit", :class => 'btn btn-primary' %>
+  </div>
+<% end %>

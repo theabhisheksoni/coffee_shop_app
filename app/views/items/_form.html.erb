@@ -11,6 +11,11 @@
     <%= form.text_field :price, class: "form-control" %>
   </div>
 
+  <div class="col-md-3">
+    <%= form.label :tax_category_id, class: "form-label" %>
+    <%= form.collection_select(:tax_category_id, TaxCategory.all, 'id', 'tax_rate',  {prompt: 'Select Tax Value'}, { class: "form-select" }) %>
+  </div>
+
   <div class="col-12">
     <div class="form-check">
       <%= form.label :availability, class: "form-check-label" %>

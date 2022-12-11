@@ -2,5 +2,6 @@
   <th scope="col" class='border'><%= item.name %></th>
   <td scope="col" class='border'><%= item.price %></td>
   <td scope="col" class='border'><%= item.availability %></td>
+  <td scope="col" class='border'><%= item.tax_category.tax_rate %></td>
   <td scope="col" class='border'><%= link_to "Show this item", item, class: 'btn btn-secondary' %></td>
 </tr>

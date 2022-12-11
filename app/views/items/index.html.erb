@@ -1,19 +1,24 @@
-<div class="container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col" class='border' >Name</th>
-        <th scope="col" class='border' >Price</th>
-        <th scope="col" class='border' >Availability</th>
-        <th scope="col" class='border' >Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <div id="items">
-        <% @items.each do |item| %>
-          <%= render item %>
-        <%end%>
-      </div>
-    </tbody>
-  </table>
-</div>
+<p style="color: green"><%= notice %></p>
+
+<h1>Items</h1>
+
+<%= link_to "New Items", new_item_path, class: 'btn btn-info' %>
+
+<table class="table caption-top">
+  <thead>
+    <tr>
+      <th scope="col" class='border'>Name</th>
+      <th scope="col" class='border'>Price</th>
+      <th scope="col" class='border'>Availability</th>
+      <th scope="col" class='border'>Tax Percent</th>
+      <th scope="col" class='border'>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <div id="items">
+      <% @items.each do |item| %>
+        <%= render item %>
+      <%end%>
+    </div>
+  </tbody>
+</table>

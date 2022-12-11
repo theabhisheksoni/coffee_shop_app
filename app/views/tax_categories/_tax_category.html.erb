@@ -1,0 +1,10 @@
+<tr>
+  <td scope="col"><%= tax_category.tax_rate %></td>
+  <td scope="col">
+    <%= link_to "Edit this item", edit_tax_category_path(tax_category), class: 'btn btn-info' %>
+    <%= link_to "Destroy discount", [tax_category], data: {
+                                  turbo_method: :delete,
+                                  turbo_confirm: "Are you sure?"
+                                  }, :class => 'btn btn-danger' %>
+  </td>
+</tr>

@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   scope :available, -> { where(availability: true) }
-  has_many :order_items, dependent: :destroy
+  belongs_to :tax_category
 end
