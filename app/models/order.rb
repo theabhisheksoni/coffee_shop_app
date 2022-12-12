@@ -38,7 +38,7 @@ class Order < ApplicationRecord
         d_total_qty_cal = discount.child_item_quantity * discount_multiplier
         d_total_qty_cal = d_total_qty_cal >= order_item.quantity ? order_item.quantity : d_total_qty_cal
 
-        d_total_qty = (d_total_qty_cal * discount.discount_percent) / 100
+        d_total_qty = (d_total_qty_cal * discount.discount_percent.to_f) / 100
         discounted_items[discount.child_item_id] = discounted_items[discount.child_item_id] ? discounted_items[discount.child_item_id] + d_total_qty : d_total_qty
       end
 
