@@ -2,7 +2,7 @@
   <%= render 'shared/errors', object: discount %>
 
   <div class="col-md-6">
-    <%= form.label :base_item_id, class: "form-label"%>
+    <%= form.label :base_item_id, class: "form-label" %>
     <%= form.collection_select(:base_item_id, Item.available, 'id', 'name', { prompt: 'Select Item' }, { class: "form-select" }) %>
   </div>
 
@@ -12,7 +12,7 @@
   </div>
 
   <div class="col-md-6">
-    <%= form.label :child_item_id, class: "form-label"%>
+    <%= form.label :child_item_id, class: "form-label" %>
     <%= form.collection_select(:child_item_id, Item.available, 'id', 'name', { prompt: 'Select Item' }, { class: "form-select" }) %>
   </div>
 
