@@ -1,6 +1,21 @@
 <%= form_with(model: order, html: { class: "row g-3" }) do |order_form| %>
   <%= render 'shared/errors', object: order %>
 
+  <div class="col-md-3">
+    <%= order_form.label :customer_name, class: "form-label" %>
+    <%= order_form.text_field :customer_name, class: "form-control" %>
+  </div>
+
+  <div class="col-md-3">
+    <%= order_form.label :customer_email, class: "form-label" %>
+    <%= order_form.text_field :customer_email, class: "form-control" %>
+  </div>
+
+  <div class="col-md-3">
+    <%= order_form.label :customer_mobile, class: "form-label" %>
+    <%= order_form.text_field :customer_mobile, class: "form-control" %>
+  </div>
+
   <div id="order_items" data-controller='orders' style="display: flex">
     <%= order_form.fields_for :order_items do |builder| %>
       <%= render 'order_item_fields', order_form: builder %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_11_220319) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_12_194659) do
   create_table "discounts", force: :cascade do |t|
     t.integer "base_item_id"
     t.integer "child_item_id"
@@ -47,6 +47,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_11_220319) do
     t.decimal "grand_total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "customer_name"
+    t.string "customer_email"
+    t.string "customer_mobile"
   end
 
   create_table "tax_categories", force: :cascade do |t|

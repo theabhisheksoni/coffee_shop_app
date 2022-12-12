@@ -1,11 +1,22 @@
 class Order < ApplicationRecord
+  # associations
   has_many :order_items, dependent: :destroy
   accepts_nested_attributes_for :order_items, allow_destroy: true, reject_if: :all_blank
 
+  # validations
+  validates :customer_name, presence: true
+  validates :customer_email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+  validates :customer_mobile, length: { is: 10 }
   validate :has_order_items
+
+  # callbacks
   before_save :calculate_order_item_price_and_tax
   # to calculate and save grand total of all order_items
   after_save :save_grand_total
+
+  def customer_details
+    "#{customer_name},\n#{customer_email},\n#{customer_mobile}"
+  end
 
   private
 
