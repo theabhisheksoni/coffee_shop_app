@@ -22,6 +22,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
+        OrdersMailer.with(name: @order.customer_name, email: @order.customer_email, order_id: @order.id).order_prepaired.deliver_now
         format.html { redirect_to order_url(@order), notice: "Order was successfully created." }
         format.json { render :show, status: :created, location: @order }
       else
